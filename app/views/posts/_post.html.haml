@@ -3,5 +3,7 @@
     =link_to post.title, post_url(post)
   .post_metadata
     ="Published by #{post.user.email} #{post.created_at}"
+    -if signed_in?
+      =link_to "Edit", edit_post_url(post)
   .post_content
     =post.body

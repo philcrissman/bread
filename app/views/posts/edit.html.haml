@@ -5,11 +5,7 @@
       %br
       =form.text_field :title
     %li
-      Excerpt (optional)
-      %br
-      =form.text_area :excerpt, :rows => 5
-    %li
-      =form.text_area :body, :rows => 10
+      =form.text_area :body, :rows => 10, :class => 'mceEditor'
     %li
       Tags (comma separate, please. Thanks.)
       %br

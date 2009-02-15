@@ -9,6 +9,7 @@
         =Blog::BLOG_NAME
     =stylesheet_link_tag 'styles.css'
     =javascript_include_tag :defaults
+    =include_tiny_mce_if_needed
   %body
     -if signed_in?
       #admin_menu
@@ -16,7 +17,7 @@
         =link_to "New Post", new_post_url
     #header
       %h1
-        =Blog::BLOG_NAME
+        =link_to Blog::BLOG_NAME, root_url
       %span.subtitle
       %br
         =Blog::SUBTITLE
