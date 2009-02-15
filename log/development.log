@@ -1,0 +1,419 @@
+  [4;36;1mSQL (49.9ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCREATE DATABASE `bread_development` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_general_ci`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (56.5ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (37.9ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateOrUpdateUsersWithClearanceColumns (20090215044648)
+  [4;36;1mSQL (3.0ms)[0m   [0;1mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255), `encrypted_password` varchar(128), `salt` varchar(128), `token` varchar(128), `token_expires_at` datetime, `email_confirmed` tinyint(1) DEFAULT 0 NOT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (5.5ms)[0m   [0mCREATE INDEX `index_users_on_id_and_token` ON `users` (`id`, `token`)[0m
+  [4;36;1mSQL (48.7ms)[0m   [0;1mCREATE INDEX `index_users_on_email` ON `users` (`email`)[0m
+  [4;35;1mSQL (40.5ms)[0m   [0mCREATE INDEX `index_users_on_token` ON `users` (`token`)[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090215044648')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-02-14 23:01:32) [GET]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+Rendering posts/index
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://bread.local/]
+
+
+Processing SessionsController#index (for 127.0.0.1 at 2009-02-14 23:12:40) [GET]
+  Parameters: {"action"=>"index", "controller"=>"sessions"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+ActionController::UnknownAction (No action responded to index. Actions: create and destroy):
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:617:in `call_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:13:in `passenger_orig_perform_action'
+    /usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `passenger_orig_perform_action'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/request_handler.rb:53:in `perform_action'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `sass_old_process'
+    /vendor/gems/haml-2.0.7/rails/../lib/sass/plugin/rails.rb:19:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/request_handler.rb:38:in `process_request'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_request_handler.rb:165:in `main_loop'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/application_spawner.rb:321:in `start_request_handler'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/application_spawner.rb:282:in `handle_spawn_application'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:163:in `safe_fork'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:161:in `fork'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:161:in `safe_fork'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/application_spawner.rb:280:in `handle_spawn_application'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:163:in `safe_fork'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:161:in `fork'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:161:in `safe_fork'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/application_spawner.rb:279:in `handle_spawn_application'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `__send__'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `main_loop'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:168:in `start_synchronously'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:135:in `start'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:112:in `fork'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:112:in `start'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/application_spawner.rb:179:in `start'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/framework_spawner.rb:270:in `handle_spawn_application'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/framework_spawner.rb:263:in `synchronize'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/framework_spawner.rb:263:in `handle_spawn_application'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `__send__'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `main_loop'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:168:in `start_synchronously'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:135:in `start'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:112:in `fork'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:112:in `start'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/framework_spawner.rb:87:in `start'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/spawn_manager.rb:222:in `spawn_rails_application'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/spawn_manager.rb:217:in `synchronize'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/spawn_manager.rb:217:in `spawn_rails_application'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/spawn_manager.rb:126:in `spawn_application'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/spawn_manager.rb:251:in `handle_spawn_application'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `__send__'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `main_loop'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:168:in `start_synchronously'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/bin/passenger-spawn-server:46
+
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-02-14 23:12:51) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+Rendering sessions/new
+Completed in 9ms (View: 4, DB: 0) | 200 OK [http://bread.local/sessions/new]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-02-14 23:12:56) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (115.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering users/new
+Rendered users/_form (4.4ms)
+Completed in 135ms (View: 10, DB: 116) | 200 OK [http://bread.local/users/new]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-02-14 23:13:13) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "email"=>"phil.crissman@gmail.com"}, "commit"=>"Sign up", "action"=>"create", "authenticity_token"=>"a5c76d3e7b5199c100f31e6f7e24a217e3cd3583", "controller"=>"users"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Exists (0.5ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'phil.crissman@gmail.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO `users` (`encrypted_password`, `salt`, `token`, `token_expires_at`, `email`, `email_confirmed`) VALUES('af8de77a4ba72f7b1168e2c6817aa239e61441ed', '569801230a17787260f38f190e5e8c1d3825898e', 'cea35155fde92610eb7b920bf62c3f50df2f7295', NULL, 'phil.crissman@gmail.com', 0)[0m
+  [4;35;1mSQL (108.8ms)[0m   [0mCOMMIT[0m
+
+
+NameError (uninitialized constant Clearance::App::Models::ClearanceMailer::DO_NOT_REPLY):
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:442:in `load_missing_constant'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:77:in `const_missing'
+    /vendor/gems/thoughtbot-clearance-0.4.6/lib/clearance/app/models/clearance_mailer.rb:14:in `confirmation'
+    /usr/local/lib/ruby/gems/1.8/gems/actionmailer-2.2.2/lib/action_mailer/base.rb:462:in `__send__'
+    /usr/local/lib/ruby/gems/1.8/gems/actionmailer-2.2.2/lib/action_mailer/base.rb:462:in `create!'
+    /usr/local/lib/ruby/gems/1.8/gems/actionmailer-2.2.2/lib/action_mailer/base.rb:455:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/actionmailer-2.2.2/lib/action_mailer/base.rb:392:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/actionmailer-2.2.2/lib/action_mailer/base.rb:392:in `method_missing'
+    /vendor/gems/thoughtbot-clearance-0.4.6/lib/clearance/app/controllers/users_controller.rb:24:in `create'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `send'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `perform_action_without_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:617:in `call_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:13:in `passenger_orig_perform_action'
+    /usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `passenger_orig_perform_action'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/request_handler.rb:53:in `perform_action'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `sass_old_process'
+    /vendor/gems/haml-2.0.7/rails/../lib/sass/plugin/rails.rb:19:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/request_handler.rb:38:in `process_request'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_request_handler.rb:165:in `main_loop'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/application_spawner.rb:321:in `start_request_handler'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/application_spawner.rb:282:in `handle_spawn_application'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:163:in `safe_fork'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:161:in `fork'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:161:in `safe_fork'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/application_spawner.rb:280:in `handle_spawn_application'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:163:in `safe_fork'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:161:in `fork'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:161:in `safe_fork'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/application_spawner.rb:279:in `handle_spawn_application'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `__send__'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `main_loop'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:168:in `start_synchronously'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:135:in `start'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:112:in `fork'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:112:in `start'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/application_spawner.rb:179:in `start'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/framework_spawner.rb:270:in `handle_spawn_application'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/framework_spawner.rb:263:in `synchronize'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/framework_spawner.rb:263:in `handle_spawn_application'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `__send__'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `main_loop'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:168:in `start_synchronously'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:135:in `start'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:112:in `fork'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:112:in `start'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/framework_spawner.rb:87:in `start'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/spawn_manager.rb:222:in `spawn_rails_application'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/spawn_manager.rb:217:in `synchronize'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/spawn_manager.rb:217:in `spawn_rails_application'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/spawn_manager.rb:126:in `spawn_application'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/spawn_manager.rb:251:in `handle_spawn_application'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `__send__'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `main_loop'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:168:in `start_synchronously'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/bin/passenger-spawn-server:46
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_trace (49.0ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_request_and_response (1.5ms)
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-02-14 23:15:06) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (2.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering users/new
+Rendered users/_form (3.3ms)
+Completed in 18ms (View: 8, DB: 3) | 200 OK [http://bread.local/users/new]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-02-14 23:15:16) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "email"=>"phil.crissman@gmail.com"}, "commit"=>"Sign up", "action"=>"create", "authenticity_token"=>"a5c76d3e7b5199c100f31e6f7e24a217e3cd3583", "controller"=>"users"}
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Exists (1.8ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'phil.crissman@gmail.com') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+Rendering users/new
+Rendered users/_form (1.7ms)
+Completed in 26ms (View: 5, DB: 5) | 200 OK [http://bread.local/users]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-02-14 23:15:38) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+Rendering sessions/new
+Completed in 120ms (View: 2, DB: 0) | 200 OK [http://bread.local/sessions/new]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-02-14 23:15:47) [POST]
+  Parameters: {"commit"=>"Sign in", "action"=>"create", "authenticity_token"=>"a5c76d3e7b5199c100f31e6f7e24a217e3cd3583", "session"=>{"password"=>"[FILTERED]", "remember_me"=>"0", "email"=>"phil.crissman@gmail.com"}, "controller"=>"sessions"}
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM `users` WHERE (email = 'phil.crissman@gmail.com') LIMIT 1[0m
+  [4;36;1mUser Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+
+
+NameError (uninitialized constant Clearance::App::Models::ClearanceMailer::DO_NOT_REPLY):
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:442:in `load_missing_constant'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:77:in `const_missing'
+    /vendor/gems/thoughtbot-clearance-0.4.6/lib/clearance/app/models/clearance_mailer.rb:14:in `confirmation'
+    /usr/local/lib/ruby/gems/1.8/gems/actionmailer-2.2.2/lib/action_mailer/base.rb:462:in `__send__'
+    /usr/local/lib/ruby/gems/1.8/gems/actionmailer-2.2.2/lib/action_mailer/base.rb:462:in `create!'
+    /usr/local/lib/ruby/gems/1.8/gems/actionmailer-2.2.2/lib/action_mailer/base.rb:455:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/actionmailer-2.2.2/lib/action_mailer/base.rb:392:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/actionmailer-2.2.2/lib/action_mailer/base.rb:392:in `method_missing'
+    /vendor/gems/thoughtbot-clearance-0.4.6/lib/clearance/app/controllers/sessions_controller.rb:30:in `create'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `send'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `perform_action_without_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:617:in `call_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:13:in `passenger_orig_perform_action'
+    /usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /usr/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `passenger_orig_perform_action'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/request_handler.rb:53:in `perform_action'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `sass_old_process'
+    /vendor/gems/haml-2.0.7/rails/../lib/sass/plugin/rails.rb:19:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/request_handler.rb:38:in `process_request'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_request_handler.rb:165:in `main_loop'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/application_spawner.rb:321:in `start_request_handler'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/application_spawner.rb:282:in `handle_spawn_application'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:163:in `safe_fork'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:161:in `fork'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:161:in `safe_fork'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/application_spawner.rb:280:in `handle_spawn_application'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:163:in `safe_fork'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:161:in `fork'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:161:in `safe_fork'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/application_spawner.rb:279:in `handle_spawn_application'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `__send__'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `main_loop'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:168:in `start_synchronously'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:135:in `start'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:112:in `fork'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:112:in `start'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/application_spawner.rb:179:in `start'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/framework_spawner.rb:270:in `handle_spawn_application'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/framework_spawner.rb:263:in `synchronize'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/framework_spawner.rb:263:in `handle_spawn_application'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `__send__'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `main_loop'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:168:in `start_synchronously'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:135:in `start'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:112:in `fork'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:112:in `start'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/framework_spawner.rb:87:in `start'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/spawn_manager.rb:222:in `spawn_rails_application'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/spawn_manager.rb:217:in `synchronize'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/spawn_manager.rb:217:in `spawn_rails_application'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/spawn_manager.rb:126:in `spawn_application'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/spawn_manager.rb:251:in `handle_spawn_application'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `__send__'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `main_loop'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:168:in `start_synchronously'
+    /usr/local/lib/ruby/gems/1.8/gems/passenger-2.0.6/bin/passenger-spawn-server:46
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_trace (46.5ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_request_and_response (2.2ms)
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-02-14 23:16:32) [POST]
+  Parameters: {"commit"=>"Sign in", "action"=>"create", "authenticity_token"=>"a5c76d3e7b5199c100f31e6f7e24a217e3cd3583", "session"=>{"password"=>"[FILTERED]", "remember_me"=>"0", "email"=>"phil.crissman@gmail.com"}, "controller"=>"sessions"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM `users` WHERE (email = 'phil.crissman@gmail.com') LIMIT 1[0m
+  [4;36;1mUser Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Sent mail to phil.crissman@gmail.com
+
+From: donotreply@bread.local
+To: phil.crissman@gmail.com
+Subject: Account confirmation
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+
+http://bread.local/users/1/confirmation/new?token=cea35155fde92610eb7b920bf62c3f50df2f7295
+Rendering /sessions/new (unauthorized)
+Completed in 36ms (View: 5, DB: 3) | 401 Unauthorized [http://bread.local/session]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-02-14 23:16:40) [POST]
+  Parameters: {"commit"=>"Sign in", "action"=>"create", "authenticity_token"=>"a5c76d3e7b5199c100f31e6f7e24a217e3cd3583", "session"=>{"password"=>"[FILTERED]", "remember_me"=>"0", "email"=>"phil.crissman@gmail.com"}, "controller"=>"sessions"}
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM `users` WHERE (email = 'phil.crissman@gmail.com') LIMIT 1[0m
+  [4;36;1mUser Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering sessions/new
+Completed in 17ms (View: 4, DB: 3) | 200 OK [http://bread.local/session]
+
+
+Processing ConfirmationsController#new (for 127.0.0.1 at 2009-02-14 23:17:03) [GET]
+  Parameters: {"token"=>"[FILTERED]", "action"=>"new", "controller"=>"confirmations", "user_id"=>"1"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (2.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1' AND `users`.`token` = 'cea35155fde92610eb7b920bf62c3f50df2f7295') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE `users` SET `token` = NULL, `email_confirmed` = 1 WHERE `id` = 1[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://bread.local/
+Completed in 19ms (DB: 6) | 302 Found [http://bread.local/users/1/confirmation/new?token=cea35155fde92610eb7b920bf62c3f50df2f7295]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-02-14 23:17:03) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+Rendering posts/index
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://bread.local/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-02-14 23:19:09) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+Rendering posts/index
+  [4;35;1mUser Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 15ms (View: 13, DB: 0) | 200 OK [http://bread.local/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateOrUpdateUsersWithClearanceColumns (20090215044648)
+Migrating to CreatePosts (20090215045446)
+  [4;36;1mSQL (2.8ms)[0m   [0;1mCREATE TABLE `posts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `title` varchar(255), `excerpt` text, `body` text, `published_at` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090215045446')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (3.1ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mdescribe `posts`[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSHOW KEYS FROM `posts`[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (2.9ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
