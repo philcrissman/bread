@@ -787,3 +787,32 @@ Processing PostsController#show (for 127.0.0.1 at 2009-02-14 23:45:49) [GET]
 Rendering posts/show
 Completed in 22ms (View: 4, DB: 11) | 200 OK [http://bread.local/posts/1]
 ** acts_as_taggable_on: initialized properly.
+** acts_as_taggable_on: initialized properly.
+** acts_as_taggable_on: initialized properly.
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateOrUpdateUsersWithClearanceColumns (20090215044648)
+Migrating to CreatePosts (20090215045446)
+Migrating to ActsAsTaggableOnMigration (20090215055238)
+  [4;36;1mSQL (2.4ms)[0m   [0;1mCREATE TABLE `tags` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mCREATE TABLE `taggings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tag_id` int(11), `taggable_id` int(11), `tagger_id` int(11), `tagger_type` varchar(255), `taggable_type` varchar(255), `context` varchar(255), `created_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (8.5ms)[0m   [0;1mCREATE INDEX `index_taggings_on_tag_id` ON `taggings` (`tag_id`)[0m
+  [4;35;1mSQL (66.3ms)[0m   [0mCREATE INDEX `index_taggings_on_taggable_id_and_taggable_type_and_context` ON `taggings` (`taggable_id`, `taggable_type`, `context`)[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090215055238')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mSQL (3.2ms)[0m   [0mdescribe `posts`[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mSHOW KEYS FROM `posts`[0m
+  [4;35;1mSQL (2.4ms)[0m   [0mSHOW FIELDS FROM `taggings`[0m
+  [4;36;1mSQL (2.9ms)[0m   [0;1mdescribe `taggings`[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSHOW KEYS FROM `taggings`[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mSHOW FIELDS FROM `tags`[0m
+  [4;35;1mSQL (2.6ms)[0m   [0mdescribe `tags`[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mSHOW KEYS FROM `tags`[0m
+  [4;35;1mSQL (3.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (3.5ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (2.6ms)[0m   [0mSHOW KEYS FROM `users`[0m
