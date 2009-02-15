@@ -1,0 +1,15 @@
+-form_for :post, Post.new, :url => posts_url do |form|
+  %ul
+    %li
+      Title
+      %br
+      =form.text_field :title
+    %li
+      Excerpt (optional)
+      %br
+      =form.text_area :excerpt, :rows => 5
+    %li
+      =form.text_area :body, :rows => 10
+    %li
+      =form.submit "Post"
+      
