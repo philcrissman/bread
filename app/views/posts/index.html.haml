@@ -1,8 +1,2 @@
-%p
-  Yo Adrian
--if signed_in?
-  =current_user.email
-  =link_to "new", new_post_url
-
 -if @posts
   =render :partial => 'post', :collection => @posts

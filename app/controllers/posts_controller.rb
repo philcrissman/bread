@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   
   def index
-    @posts = Post.find :all # well, all published.
+    @posts = Post.find( :all, :order => 'created_at DESC' )# well, all published.
   end
   
   def new

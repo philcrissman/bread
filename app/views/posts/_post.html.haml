@@ -1,5 +1,7 @@
 %div.post
   %h2.post_title
     =link_to post.title, post_url(post)
+  .post_metadata
+    ="Published by #{post.user.email} #{post.created_at}"
   .post_content
     =post.body

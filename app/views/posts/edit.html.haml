@@ -1,4 +1,4 @@
--form_for :post, Post.new, :url => posts_url do |form|
+-form_for @post, :url => post_url(@post) do |form|
   %ul
     %li
       Title
@@ -16,4 +16,3 @@
       =form.text_field :tag_list
     %li
       =form.submit "Post"
-      
