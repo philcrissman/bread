@@ -2992,3 +2992,9 @@ Processing SessionsController#new (for 127.0.0.1 at 2009-02-15 23:24:37) [GET]
 Rendering template within layouts/application
 Rendering sessions/new
 Completed in 11ms (View: 8, DB: 0) | 200 OK [http://bread.local/login]
+** acts_as_taggable_on: initialized properly.
+** acts_as_taggable_on: initialized properly.
+** acts_as_taggable_on: initialized properly.
+** acts_as_taggable_on: initialized properly.
+** acts_as_taggable_on: initialized properly.
+** acts_as_taggable_on: initialized properly.
