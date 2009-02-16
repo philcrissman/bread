@@ -1,0 +1,13 @@
+db/*.sqlite3
+test/fixtures
+tmp/
+log/*
+.DS_Store
+doc/api
+doc/app
+README
+public/stylesheets/main.css
+public/system
+coverage.data
+coverage/
+config/locales
