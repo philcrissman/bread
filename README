@@ -9,6 +9,16 @@ It's currently using thoughtbot-clearance.
 
 It has a post model.
 
+It has a pretty basic layout and a theme.css file.
+
+So, basically, you don't install themes, you just write your own theme.css. If the application layout isn't flexible enough, you can alter that.
+
+Also, there is a sidebar partial. You can put stuff in there.
+
+So it isn't much, still, but face it, you were going to write your own theme anyways, right?
+
+TODO: Add comments? Or maybe allow Disqus to plugin? Maybe.
+
 That is all.
 
 (It is a blog.)
