@@ -2998,3 +2998,331 @@ Completed in 11ms (View: 8, DB: 0) | 200 OK [http://bread.local/login]
 ** acts_as_taggable_on: initialized properly.
 ** acts_as_taggable_on: initialized properly.
 ** acts_as_taggable_on: initialized properly.
+** acts_as_taggable_on: initialized properly.
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-02-16 10:16:53) [GET]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM `posts` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;35;1mPost Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mUser Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (79.7ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (9.1ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (9.1ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (10.2ms)
+Completed in 281ms (View: 268, DB: 1) | 200 OK [http://bread.local/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-02-16 10:17:01) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM `posts` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;36;1mPost Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mUser Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.6ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (35.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (7.1ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (7.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (7.4ms)
+Completed in 79ms (View: 69, DB: 1) | 200 OK [http://bread.local/]
+** acts_as_taggable_on: initialized properly.
+
+
+Processing PostsController#show (for 127.0.0.1 at 2009-02-16 16:26:59) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mPost Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mPost Load (37.2ms)[0m   [0mSELECT * FROM `posts` WHERE (`posts`.`id` = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+  [4;36;1mUser Columns (31.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (2.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Completed in 412ms (View: 358, DB: 40) | 200 OK [http://bread.local/posts/2]
+** acts_as_taggable_on: initialized properly.
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-02-16 16:27:03) [GET]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM `posts` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;35;1mPost Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (53.2ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (9.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (162.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (9.5ms)
+Completed in 279ms (View: 267, DB: 1) | 200 OK [http://bread.local/]
+** acts_as_taggable_on: initialized properly.
+** acts_as_taggable_on: initialized properly.
+** acts_as_taggable_on: initialized properly.
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-02-16 18:58:48) [GET]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM `posts` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;35;1mPost Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mUser Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (276.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (9.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (8.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (9.4ms)
+Completed in 331ms (View: 318, DB: 1) | 200 OK [http://bread.local/]
+** acts_as_taggable_on: initialized properly.
+** acts_as_taggable_on: initialized properly.
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-02-16 19:14:22) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM `posts` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;35;1mPost Columns (2.7ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mUser Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (208.7ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (10.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (9.1ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (8.9ms)
+Completed in 262ms (View: 251, DB: 1) | 200 OK [http://bread.local/]
+** acts_as_taggable_on: initialized properly.
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-02-16 19:55:01) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM `posts` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;35;1mPost Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mUser Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (219.1ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (8.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (8.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (9.2ms)
+Completed in 272ms (View: 260, DB: 1) | 200 OK [http://bread.local/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-02-16 19:58:13) [GET]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM `posts` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;36;1mPost Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.9ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (28.5ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (9.0ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (9.0ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (9.2ms)
+Rendered shared/_sidebar (0.2ms)
+Completed in 78ms (View: 68, DB: 1) | 200 OK [http://bread.local/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-02-16 20:00:03) [GET]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM `posts` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;35;1mPost Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mUser Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (2.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (23.0ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (8.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (9.0ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (9.2ms)
+Rendered shared/_sidebar (0.2ms)
+Completed in 73ms (View: 62, DB: 1) | 200 OK [http://bread.local/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-02-16 20:00:35) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mPost Load (0.4ms)[0m   [0mSELECT * FROM `posts` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;36;1mPost Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mUser Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.8ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (26.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (8.7ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (8.7ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (9.4ms)
+Rendered shared/_sidebar (0.3ms)
+Completed in 74ms (View: 66, DB: 1) | 200 OK [http://bread.local/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-02-16 20:01:47) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM `posts` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;35;1mPost Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (26.1ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (8.9ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (9.3ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (9.4ms)
+Rendered shared/_sidebar (0.2ms)
+Completed in 78ms (View: 66, DB: 1) | 200 OK [http://bread.local/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-02-16 20:03:04) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered shared/_sidebar (0.2ms)
+Completed in 18ms (View: 13, DB: 0) | 200 OK [http://bread.local/login]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-02-16 20:03:16) [POST]
+  Parameters: {"commit"=>"Sign in", "action"=>"create", "authenticity_token"=>"5c75f639bc661301fe59ef931d1814a932b002da", "session"=>{"password"=>"[FILTERED]", "remember_me"=>"0", "email"=>"phil.crissman@gmail.com"}, "controller"=>"sessions"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Load (28.0ms)[0m   [0mSELECT * FROM `users` WHERE (email = 'phil.crissman@gmail.com') LIMIT 1[0m
+  [4;36;1mUser Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Redirected to http://bread.local/
+Completed in 41ms (DB: 31) | 302 Found [http://bread.local/session]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-02-16 20:03:16) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM `posts` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;36;1mPost Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mUser Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Rendered posts/_post (26.3ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (9.0ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (9.2ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (9.3ms)
+Rendered shared/_sidebar (0.2ms)
+Completed in 76ms (View: 67, DB: 1) | 200 OK [http://bread.local/]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2009-02-16 20:03:29) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+Rendering template within layouts/application
+Rendering posts/new
+  [4;35;1mPost Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mTagging Columns (54.5ms)[0m   [0;1mSHOW FIELDS FROM `taggings`[0m
+  [4;35;1mTag Load (14.3ms)[0m   [0mSELECT `tags`.* FROM `tags` INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((`taggings`.taggable_type = 'Post') AND (`taggings`.taggable_id = NULL) AND (context = 'tags')) [0m
+  [4;36;1mUser Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.5ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Rendered shared/_sidebar (0.3ms)
+Completed in 116ms (View: 114, DB: 0) | 200 OK [http://bread.local/posts/new]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2009-02-16 20:05:08) [POST]
+  Parameters: {"commit"=>"Post", "authenticity_token"=>"5c75f639bc661301fe59ef931d1814a932b002da", "post"=>{"body"=>"<p>This is yet another post.</p>\r\n<p>Somehthing.</p>\r\n<p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>\r\n<p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>\r\n<p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>", "title"=>"Yet Another Post", "tag_list"=>"groovy, new, lorem"}}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mPost Columns (3.6ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPost Create (0.3ms)[0m   [0;1mINSERT INTO `posts` (`updated_at`, `title`, `body`, `excerpt`, `user_id`, `published_at`, `created_at`) VALUES('2009-02-17 02:05:08', 'Yet Another Post', '<p>This is yet another post.</p>\r\n<p>Somehthing.</p>\r\n<p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>\r\n<p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>\r\n<p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>', NULL, NULL, NULL, '2009-02-17 02:05:08')[0m
+  [4;35;1mTag Load (35.1ms)[0m   [0mSELECT `tags`.* FROM `tags` INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((`taggings`.taggable_type = 'Post') AND (`taggings`.taggable_id = 5) AND (context = 'tags')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `tags`.* FROM `tags` INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((`taggings`.taggable_type = 'Post') AND (`taggings`.taggable_id = 5) AND (context = 'tags')) [0m
+  [4;35;1mTag Load (16.9ms)[0m   [0mSELECT * FROM `tags` WHERE (name LIKE 'groovy') LIMIT 1[0m
+  [4;36;1mTag Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `tags`[0m
+  [4;35;1mTag Exists (0.2ms)[0m   [0mSELECT `tags`.id FROM `tags` WHERE (`tags`.`name` = BINARY 'groovy') LIMIT 1[0m
+  [4;36;1mTag Create (0.2ms)[0m   [0;1mINSERT INTO `tags` (`name`) VALUES('groovy')[0m
+  [4;35;1mTagging Create (33.8ms)[0m   [0mINSERT INTO `taggings` (`tagger_id`, `tag_id`, `taggable_type`, `taggable_id`, `context`, `tagger_type`, `created_at`) VALUES(NULL, 7, 'Post', 5, 'tags', NULL, '2009-02-17 02:05:09')[0m
+  [4;36;1mTag Load (0.3ms)[0m   [0;1mSELECT * FROM `tags` WHERE (name LIKE 'new') LIMIT 1[0m
+  [4;35;1mTag Exists (0.2ms)[0m   [0mSELECT `tags`.id FROM `tags` WHERE (`tags`.`name` = BINARY 'new') LIMIT 1[0m
+  [4;36;1mTag Create (0.2ms)[0m   [0;1mINSERT INTO `tags` (`name`) VALUES('new')[0m
+  [4;35;1mTagging Create (0.2ms)[0m   [0mINSERT INTO `taggings` (`tagger_id`, `tag_id`, `taggable_type`, `taggable_id`, `context`, `tagger_type`, `created_at`) VALUES(NULL, 8, 'Post', 5, 'tags', NULL, '2009-02-17 02:05:09')[0m
+  [4;36;1mTag Load (0.2ms)[0m   [0;1mSELECT * FROM `tags` WHERE (name LIKE 'lorem') LIMIT 1[0m
+  [4;35;1mTag Exists (0.1ms)[0m   [0mSELECT `tags`.id FROM `tags` WHERE (`tags`.`name` = BINARY 'lorem') LIMIT 1[0m
+  [4;36;1mTag Create (0.1ms)[0m   [0;1mINSERT INTO `tags` (`name`) VALUES('lorem')[0m
+  [4;35;1mTagging Create (0.2ms)[0m   [0mINSERT INTO `taggings` (`tagger_id`, `tag_id`, `taggable_type`, `taggable_id`, `context`, `tagger_type`, `created_at`) VALUES(NULL, 9, 'Post', 5, 'tags', NULL, '2009-02-17 02:05:09')[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPost Update (0.3ms)[0m   [0;1mUPDATE `posts` SET `user_id` = 1, `updated_at` = '2009-02-17 02:05:09' WHERE `id` = 5[0m
+  [4;35;1mTag Load (0.3ms)[0m   [0mSELECT `tags`.* FROM `tags` INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((`taggings`.taggable_type = 'Post') AND (`taggings`.taggable_id = 5) AND (context = 'tags')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `tags`.* FROM `tags` INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((`taggings`.taggable_type = 'Post') AND (`taggings`.taggable_id = 5) AND (context = 'tags')) [0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCOMMIT[0m
+Redirected to http://bread.local/
+Completed in 144ms (DB: 98) | 302 Found [http://bread.local/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-02-16 20:05:09) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM `posts` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;35;1mPost Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mUser Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Rendered posts/_post (25.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (9.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (8.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (9.0ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered posts/_post (9.1ms)
+Rendered shared/_sidebar (0.2ms)
+Completed in 82ms (View: 74, DB: 1) | 200 OK [http://bread.local/]
